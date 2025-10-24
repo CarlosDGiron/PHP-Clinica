@@ -2,7 +2,6 @@
 
 Este repositorio contiene una aplicación web de gestión para una clínica (pacientes, empleados, ventas, inventario, módulos y roles). El proyecto está organizado como una aplicación PHP ligera con un frontend estático que consume la API interna del mismo servidor.
 
-> Nota: Se ignora el folder `movil` (aplicación móvil) en esta descripción.
 
 ## Resumen
 
