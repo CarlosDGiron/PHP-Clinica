@@ -1,0 +1,18 @@
+ServerSignature Off
+Options -Indexes
+
+# Unicas reglas que se aplican en hostinger
+RewriteEngine On
+
+# Preservar la cabecera Authorization para que PHP la reciba cuando Apache/Módulos la limpien
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+<IfModule mod_headers.c>
+	# Cabeceras CORS mínimas para permitir preflight en requests JSON desde el mismo u otros orígenes
+	Header set Access-Control-Allow-Origin "*"
+	Header set Access-Control-Allow-Methods "GET,POST,OPTIONS"
+	Header set Access-Control-Allow-Headers "Authorization,Content-Type"
+</IfModule>
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
