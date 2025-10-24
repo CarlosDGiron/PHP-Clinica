@@ -3,3 +3,6 @@ ReadMe.md
 app/config/Config.php
 app/config/ApiKey.php
 movil/
+clinica.sql
+directorio.txt
+app/config/Database.php
